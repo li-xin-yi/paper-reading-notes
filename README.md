@@ -152,3 +152,25 @@ If you like Moonwalk, do check out my other projects
 ✨⚡You can read more about me on my [blog](https://www.abhinav.co/about/) or follow me on Twitter - [@abhinav](https://twitter.com/abhinav)
 
 ✨⚡If you like my work, you can [buy me a coffee](https://buymeacoffee.com/abhinavs)                
+
+## Docker
+
+Not so friendly with MacOS, but you can run the following command to start a container with the Jekyll server running:
+
+```bash
+# pull the minimal jekyll docker for arm64
+docker pull mrxder/jekyll-docker-arm64:latest
+# start the container and attach the current directory to the container
+docker run --rm -it -p 4000:4000/tcp -v $(pwd):/app mrxder/jekyll-docker-arm64:latest /bin/bash
+```
+
+Inside the container, you can run the following commands:
+
+```bash
+# install the dependencies
+bundle install
+# start the server
+bundle exec jekyll serve --host 0.0.0.0
+```
+
+Then you can access the server at `http://localhost:4000` on your host machine.
