@@ -167,6 +167,8 @@ docker run --rm -it -p 4000:4000/tcp -v $(pwd):/app mrxder/jekyll-docker-arm64:l
 Inside the container, you can run the following commands:
 
 ```bash
+# change to the app directory
+cd /app
 # install the dependencies
 bundle install
 # start the server
